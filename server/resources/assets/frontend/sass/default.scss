@@ -1,0 +1,610 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+@mixin bg-linear-down($color1, $color2) {
+    background: $color1;
+    background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$color1), color-stop(100%,$color2));
+    background: -webkit-linear-gradient(left, $color1 0%,$color2 100%);
+    background: -o-linear-gradient(left, $color1 0%,$color2 100%);
+    background: -ms-linear-gradient(left, $color1 0%,$color2 100%);
+    background: linear-gradient(to right, $color1 0%,$color2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e94b80', endColorstr='#fa5759',GradientType=1 );
+}
+
+$margins: 0 1 2 3 4 5 6 7 8 9 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 150 200 250 300 400 500 600 700 800 900 1000;
+@each $mg in $margins {    
+    .margin-top-#{$mg} {
+        margin-top: #{$mg}px;        
+    }
+    .margin-bottom-#{$mg} {
+        margin-bottom: #{$mg}px;        
+    }
+    .margin-left-#{$mg} {
+        margin-left: #{$mg}px;        
+    }
+    .margin-right-#{$mg} {
+        margin-right: #{$mg}px;        
+    }
+}
+
+@each $mg in $margins {    
+    .margin-top-i-#{$mg} {
+        margin-top: #{$mg}px !important;      
+    }
+    .margin-bottom-i-#{$mg} {
+        margin-bottom: #{$mg}px !important;       
+    }
+    .margin-left-i-#{$mg} {
+        margin-left: #{$mg}px !important;         
+    }
+    .margin-right-i-#{$mg} {
+        margin-right: #{$mg}px !important;      
+    }
+}
+
+@each $mg in $margins {    
+    .min-height-#{$mg} {
+        min-height: #{$mg}px;      
+    }
+    .min-width-#{$mg} {
+        min-width: #{$mg}px;       
+    }
+}
+
+$colors: black red white blue green yellow;
+@each $cl in $colors {    
+    .color-#{$cl} {
+        color: #{$cl};        
+    }
+}
+
+html{
+    height: 100%;
+    width: 100%;
+
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        -webkit-font-smoothing: antialiased;
+        
+        .width-100 {
+            width: 100%;
+        }
+        
+        .width-20 {
+            width: 20%;
+        }        
+        
+        .price-rule {
+            table {
+                border: 1px solid;
+                
+                td {
+                    border: 1px solid;
+                    padding: 5px;
+                }
+            }
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .lowercase {
+            text-transform: lowercase;
+        }
+
+        .capitalize {
+            text-transform: capitalize;
+        }
+        
+        .btn-create-order {
+            height: 36px;
+            line-height: 36px;
+            padding: 0px 20px;
+            margin-top: 17px;
+            margin-left: 15px;
+            background: #ff4a46;                        
+            border: none; 
+            @include box-shadow(0px 3px 6px #a0293f); 
+
+            a {
+                color: #ffffff;
+            }
+        }
+
+        .visible {
+            visibility: hidden;
+        }
+        
+        .font-italic {
+            font-style: italic;                                                
+        }       
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        .text-yellow {
+            color: #f2c053;
+        } 
+
+        .margin-top-50 {
+            margin-top: 110px;
+        }
+
+        .font-size-16 {
+            font-size: 16px;
+        }
+
+        a, a:hover {
+            text-decoration: none;
+        }
+
+        .color-logo {
+            color: #ff4a46;
+        }
+
+        .no-padding-margin {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .no-margin-top {
+            margin-top: 0px;
+        }
+
+        .no-margin-bottom {
+            margin-bottom: 0px;
+        }
+        
+        .no-margin {
+            margin: 0px;
+        }
+        
+        .align-left {
+            text-align: left;
+        }
+        
+        .align-right {
+            text-align: right;
+        }
+        
+        .align-center {
+            text-align: center;
+        }
+        
+        .header-mobile {
+            z-index: 2 !important;            
+            position: fixed;
+            display: none;
+            background: rgba(242, 192, 83, 0.65);
+            border-bottom: 1px solid rgb(242,192,83);
+        }
+        
+        .header-wrapper {
+            float: left;
+            width: 100%;
+            
+            .header {
+                .header-top {                    
+                    min-height: 70px;
+
+                    #logo {
+                        line-height: 70px;
+                        color: #ff4a46;
+
+                        strong {
+                            font-weight: bold;
+                            color: #ff4a46;
+                        }
+                    }
+
+                    .menu-header {                        
+                        ul {
+                            float: right;
+                            line-height: 70px;
+                            margin: 0px;
+                            padding: 0px;
+
+                            li {
+                                display: inline-block;
+                                padding: 0px 10px;
+                                /*margin: 0px 5px;*/
+                                height: 51px;                                
+
+                                a {
+                                    color: #eff5fb;
+                                    
+                                    h5 {
+                                        height: 30px;
+                                    }
+                                }                                                                
+                            }    
+
+                            li.activate, li:hover {
+                                border-bottom: 3px solid #ff4a46;
+
+                                a {
+                                    color: #ff4a46;
+                                }
+                            }
+                        }
+
+                        button {
+                            float: right;                                                      
+                        }
+                    }
+                }
+
+                .slide {
+                    height: 540px;
+                    text-align: center;      
+
+                    p {
+                        padding: 0px;
+                        margin: 0px;
+                    }                   
+                }
+            }                
+        }
+
+        .footer-wrapper {
+            position: relative;
+            z-index: 1;
+            top: -160px;
+            float: left;
+            width: 100%;
+
+            .footer {
+                overflow: hidden;
+                height: 400px;       
+                padding-top: 100px;
+
+                .container {
+                    margin-top: 40px;
+
+                    .row {                               
+                        p, h2 {
+                            text-align: center;
+                        }
+
+                        p {
+                            padding: 0px;
+                            margin: 5px 0px 0px 0px;
+                        }
+
+                        .notified {
+                            margin-top: 10px;
+                        }
+                    }
+                }                
+            }
+        }
+
+        .content-wrapper {       
+            float: left;
+            width: 100%;            
+            margin: 0 auto;
+            position: relative;                        
+            background: #d03e3b;
+
+            .content-bg {
+                position: absolute;
+                left: -60px;
+                bottom: 0px;
+                width: 86%;
+            }
+
+            .container {
+                height: 100%;
+
+                .header{
+                    background: #330c37;
+                    color: #ffffff;
+                    display: block;
+                    overflow: hidden;
+                }
+
+                .main-body{                    
+                    padding-bottom: 120px;
+
+                    .box-center-wrapper {                        
+                        @include box-shadow(0px 5px 100px rgba(0,0,0,0.2)); 
+                        z-index: 1;
+                    }                        
+
+                    .box {
+                        overflow: hidden;                        
+                        min-height: 370px;                          
+                        text-align: center;
+                        padding: 0px 20%;   
+                        @include box-shadow(0px 0px 15px #888888); 
+                    }
+
+                    .box-center {
+                        min-height: 435px;
+                        @include border-radius(5px 5px 5px 5px); 
+
+                        background: #fcf6e2; /* For browsers that do not support gradients */
+                        background: -webkit-linear-gradient(#fcf6e2, #ffecc2); /* For Safari 5.1 to 6.0 */
+                        background: -o-linear-gradient(#fcf6e2, #ffecc2); /* For Opera 11.1 to 12.0 */
+                        background: -moz-linear-gradient(#fcf6e2, #ffecc2); /* For Firefox 3.6 to 15 */
+                        background: linear-gradient(#fcf6e2, #ffecc2); /* Standard syntax */
+                    }
+
+                    .box-left {
+                        @include border-radius(5px 0px 0px 5px); 
+                        margin-top: 40px;
+
+                        background: #ffecc2; /* For browsers that do not support gradients */
+                        background: -webkit-linear-gradient(left, #ffecc2 , #fcf6e2); /* For Safari 5.1 to 6.0 */
+                        background: -o-linear-gradient(right, #ffecc2, #fcf6e2); /* For Opera 11.1 to 12.0 */
+                        background: -moz-linear-gradient(right, #ffecc2, #fcf6e2); /* For Firefox 3.6 to 15 */
+                        background: linear-gradient(to right, #ffecc2 , #fcf6e2); /* Standard syntax */
+                    }
+
+                    .box-right {
+                        @include border-radius(0px 5px 5px 0px); 
+                        margin-top: 40px;
+
+                        background: #fcf6e2; /* For browsers that do not support gradients */
+                        background: -webkit-linear-gradient(left, #fcf6e2 , #ffecc2); /* For Safari 5.1 to 6.0 */
+                        background: -o-linear-gradient(right, #fcf6e2, #ffecc2); /* For Opera 11.1 to 12.0 */
+                        background: -moz-linear-gradient(right, #fcf6e2, #ffecc2); /* For Firefox 3.6 to 15 */
+                        background: linear-gradient(to right, #fcf6e2 , #ffecc2); /* Standard syntax */
+                    }
+
+                    .feature-article {
+                        position: absolute;
+                        top: -110px;
+                    }
+
+                    .slogan {
+                        margin-top: 350px;                                               
+
+                        .home-titles {
+                            margin-top: 150px;
+
+                            .home-title {
+                                h2 {
+                                    font-size: 44px;
+                                }
+                            }
+                        }                        
+
+                        .home-description {
+                            color: #ffffff;
+                            font-size: 16px;
+                            padding: 0% 16% 0% 16%;
+                            position: relative;
+                            line-height: 30px;
+                            margin-top: 30px;
+                            margin-bottom: 30px;
+
+                            .line-half {
+                                position: absolute;
+                                display: block;
+                                width: 10%;
+                                height: 2px;
+                                background: #f2c053;
+                                left: 0;
+                                top: 17%;
+                            }
+                        }
+
+                        .app-button {
+                            text-align: right;
+
+                            a {
+                                overflow: hidden;
+                                height: 100%;
+                                display: block;
+                                float: right;
+                                margin-left: 20px;
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+
+                    .box-icon {
+                        margin-top: 45px;
+                        margin-bottom: 10px;
+                    }
+
+                    .box-title {
+                        margin-bottom: 15px;
+                    }
+
+                    .box-content {
+                        text-align: justify;
+
+                        .font-bold {
+                            margin-bottom: 10px;
+                        }
+
+                        .font-normal {
+                            font-size: 14px;
+                        }
+                    }                                        
+                }
+
+                .footer{
+                    width: 100%;
+                    height: 120px;
+                    padding-top: 45px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    color: #ffffff;
+                    background: blue;
+                }
+            }            
+        }
+
+        .login-form {
+            position: inherit;                        
+            text-align: center;
+            height: 150px;
+
+            .main-body {
+                form {
+                    margin-top: 15px;
+
+                    .form-group {
+                        overflow: hidden;
+
+                        .row.overflow-hidden button {
+                            @include border-radius(6px);
+                        }
+                        
+                        #username, #password, #username:hover, #password:hover, #username:focus, #password:focus {
+                            border: 1px solid #eac4a0;
+                            background: #ffffff;
+                            height: 40px;
+                            line-height: 40px;
+                        }
+
+                        #username {
+                            @include border-radius(5px 5px 0px 0px);                            
+                        }
+
+                        #password {
+                            @include border-radius(0px 0px 5px 5px); 
+                            margin-top: -1px;
+                        }
+
+                        button {
+                            width: 100%;
+                            border: none;                            
+                        }
+                        
+                        .btn-face {
+                            @include bg-linear-down(#87b3e8, #4a90e2); 
+                        }                        
+                        
+                        .btn-normal {
+                            @include bg-linear-down(#ff7a77, #ff4a46);                             
+                        }
+                        
+                        .btn-register {
+                            @include bg-linear-down(#7b4381 ,#330c37);
+                        }
+                        
+                        label {
+                            font-weight: normal;
+                            color: #ffffff;
+                            font-size: 14px;
+                        }
+                        
+                        label.color-black {
+                            color: #7b4381;
+                        }
+                    }
+
+                    .pass-area {
+                        position: relative;
+
+                        .forgot-link {
+                            position: absolute;
+                            right: 0px;
+                            top: 3px;
+                            color: #d9534f;
+                        }
+                    }
+                }
+            }
+
+            .login-area {                
+                position: absolute;
+                right: 15px;
+                top: 70px;
+                width: 300px;
+                float: right;
+
+                .panel-default {
+                    background: url("../../frontend/img/login-bg.png") no-repeat;
+                    background-size: cover;
+                    border: none;
+                    @include box-shadow(0px 3px 6px #a0293f); 
+
+                }
+            }
+        }
+        
+        .register-form {
+            height: 200px;
+            position: inherit;
+            
+            .main-body {
+                form {
+                    .form-group {
+                        text-align: left;
+                        
+                        #username {
+                            @include border-radius(5px 5px 5px 5px);                            
+                        }
+                        
+                        #password  {
+                            @include border-radius(5px 5px 5px 5px);                            
+                        }
+                        
+                        input {
+                            height: 35px !important;
+                            margin-bottom: 18px;
+                        }
+                        
+                        .btn {
+                            padding: 8px 12px;
+                        }
+                    }
+                }
+            }
+            
+            .login-area {        
+                width: 700px;
+                position: relative;
+                right: auto;
+                left: 50%;
+                margin-left: -350px;
+                top: auto;
+                float: none;
+                margin-top: -250px;
+                z-index: 1;
+                
+                .panel-default {
+                    @include box-shadow(0px 3px 6px #ffffff); 
+
+                }
+            }
+            
+            .alert-danger {
+                font-size: 12px;
+                padding: 8px;
+            }
+            
+            .row {
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+            
+        }
+    }
+}

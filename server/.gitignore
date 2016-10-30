@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+/public/storage
+/public/builds/*
+/resources/assets/bowers/*
+/nbproject
+Homestead.yaml
+Homestead.json
+.env

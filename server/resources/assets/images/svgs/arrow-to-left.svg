@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 16" style="enable-background:new 0 0 20 16;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Path_1_);}
+</style>
+<linearGradient id="Path_1_" gradientUnits="userSpaceOnUse" x1="-524.8168" y1="415.9375" x2="-526.05" y2="415.9375" gradientTransform="matrix(-20 0 0 16 -10501 -6647)">
+	<stop  offset="0" style="stop-color:#0E0653"/>
+	<stop  offset="1" style="stop-color:#F41F0A"/>
+</linearGradient>
+<polygon id="Path" class="st0" points="12.7,0 12.7,6 0,6 0,10 12.7,10 12.7,16 20,8 "/>
+</svg>

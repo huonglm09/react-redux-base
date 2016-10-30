@@ -1,0 +1,138 @@
+@import "../vendor/variables";
+@import "../vendor/mixins";
+
+@each $px in $series {    
+    .margin-top-#{$px} {
+        margin-top: #{$px}px;        
+    }
+    .margin-bottom-#{$px} {
+        margin-bottom: #{$px}px;        
+    }
+    .margin-left-#{$px} {
+        margin-left: #{$px}px;        
+    }
+    .margin-right-#{$px} {
+        margin-right: #{$px}px;        
+    }
+    
+    .pd-t-#{$px} {
+        margin-top: #{$px}px;        
+    }
+    .pd-b-#{$px} {
+        margin-bottom: #{$px}px;        
+    }
+    .pd-l-#{$px} {
+        margin-left: #{$px}px;        
+    }
+    .pd-r-#{$px} {
+        margin-right: #{$px}px;        
+    }
+}
+
+@each $pd in $series {    
+    .padding-top-#{$pd} {
+        padding-top: #{$pd}px;        
+    }
+    .padding-bottom-#{$pd} {
+        padding-bottom: #{$pd}px;        
+    }
+    .padding-left-#{$pd} {
+        padding-left: #{$pd}px;        
+    }
+    .padding-right-#{$pd} {
+        padding-right: #{$pd}px;        
+    }
+}
+
+@each $mg in $series {    
+    .margin-#{$mg} {
+        margin: #{$mg}px;        
+    }
+}
+
+@each $pd in $series {    
+    .padding-#{$pd} {
+        padding: #{$pd}px;        
+    }
+}
+
+@each $mg in $series {    
+    .margin-i-#{$mg} {
+        margin: #{$mg}px !important;        
+    }
+}
+
+@each $pd in $series {    
+    .padding-i-#{$pd} {
+        padding: #{$pd}px !important;           
+    }
+}
+
+@each $p in $series {    
+    .top-#{$p} {
+        top: #{$p}px;           
+    }
+    .bottom-#{$p} {
+        bottom: #{$p}px;           
+    }
+    .left-#{$p} {
+        left: #{$p}px;           
+    }
+    .right-#{$p} {
+        right: #{$p}px;           
+    }    
+}
+
+@each $mg in $series {    
+    .margin-top-i-#{$mg} {
+        margin-top: #{$mg}px !important;        
+    }
+    .margin-bottom-i-#{$mg} {
+        margin-bottom: #{$mg}px !important;        
+    }
+    .margin-left-i-#{$mg} {
+        margin-left: #{$mg}px !important;        
+    }
+    .margin-right-i-#{$mg} {
+        margin-right: #{$mg}px !important;       
+    }
+}
+
+@each $pd in $series {    
+    .padding-top-i-#{$pd} {
+        padding-top: #{$pd}px !important;    
+    }
+    .padding-bottom-i-#{$pd} {
+        padding-bottom: #{$pd}px !important;      
+    }
+    .padding-left-i-#{$pd} {
+        padding-left: #{$pd}px !important;      
+    }
+    .padding-right-i-#{$pd} {
+        padding-right: #{$pd}px !important;       
+    }
+}
+
+@each $w in $series {    
+    .width-#{$w} {
+        width: #{$w}px;    
+    }
+}
+
+@each $cl in $colors {    
+    .color-#{$cl} {
+        color: #{$cl};        
+    }
+}
+
+@each $cl in $colorCodes {    
+    .color-#{$cl} {
+        color: #{'#' + $cl};        
+    }
+}
+
+@each $bg in $colorCodes {    
+    .bg-#{$bg} {
+        background: #{'#' + $bg};        
+    }
+}

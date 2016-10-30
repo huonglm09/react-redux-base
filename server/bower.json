@@ -1,0 +1,23 @@
+{
+  "name": "ship368",
+  "description": "",
+  "main": "",
+  "authors": [
+    "tienlm1509 <tienlm1509@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "moment": "^2.13.0",
+    "jquery-backstretch": "2.0.4",
+    "bootstrap-datepicker": "^1.6.1",
+    "eonasdan-bootstrap-datetimepicker": "bootstrap3-datetimepicker#^4.17.37",
+    "components-font-awesome": "^4.6.3",
+    "bootbox.js": "bootbox#^4.4.0",
+    "jquery.nicescroll": "^3.6.8",
+    "blueimp-file-upload": "9.12.5",
+    "ckeditor": "^4.5.10"
+  }
+}

@@ -1,0 +1,284 @@
+@import "../vendor/variables";
+@import "../vendor/mixins";
+
+.cover-order-map{
+    min-height: 360px;
+}
+
+.ship-order-map{
+    /*min-height: 600px;*/
+}
+
+.full-height{
+    min-height: 100%;
+}
+.form-style-order{
+
+    .form-group{
+        margin: 0;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        min-height: 25px;
+        padding: 10px 40px;
+        position: relative;
+        padding: 0px 40px;
+        position: relative;
+        overflow: hidden;
+
+        .row{
+            .radio{
+                margin: 0;
+                label{
+                    display: block;
+                    position: relative;
+                    margin: 0;
+                    padding-right: 20px;
+                    padding-left: 12px;
+                    >input{
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .form-icon{
+        left: 20px;
+        top: calc(50% - 10px);
+    }
+
+    .control-label{
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        font-weight: 400;
+        padding: 3px 12px;
+        margin: 0;
+    }
+
+
+    .form-control{
+        padding: 3px 12px;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        height: 25px;
+        font-weight: 600;
+        color: #330c37;
+
+        &.input-places{
+            &.active{
+                color:    #ff4a46;
+                &::-webkit-input-placeholder {
+                    color:    #ff4a46;
+                }
+                &:-moz-placeholder {
+                    color:    #ff4a46;
+                    opacity:  1;
+                }
+                &::-moz-placeholder {
+                    color:    #ff4a46;
+                    opacity:  1;
+                }
+                &:-ms-input-placeholder {
+                    color:    #ff4a46;
+                }
+            }
+        }
+    }
+
+    .form-control-static{
+        padding: 3px 12px;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        height: 25px;
+        font-weight: 600;
+        color: #330c37;
+        min-height: 25px;
+    }
+
+    .error{
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        background: #ff4a46;
+        z-index: 6;
+        opacity: 0.95;
+        color: #ffffff;
+        right: -94%;
+        top: 0;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+}
+
+.box-order{
+    padding: 15px 0;
+    border-top: 1px dashed #999999;
+    .box-order-title{
+        margin: 0;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+.cb-style-order{
+    font-size: 18px;
+    margin: 0;
+    padding: 5px 0;
+    width: 100%;
+    >label{
+        position: relative;
+        width: 100%;
+        padding-left: 45px;
+        padding-right: 45px;
+
+        >input{
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            right: 0;
+            width: 18px;
+            height: 18px;
+            top: calc(50% - 9px);
+        }
+    }
+}
+
+.css-tab-order{
+    padding-top: 15px;
+    color: #330c37;
+
+    .radio-box{
+        margin: 0;
+        padding: 0;
+        height: 130px;
+        border-radius: 6px;
+        border: 1px solid #dddddd;
+        overflow: hidden;
+        .radio{
+            margin: 0;
+            height: 100%;
+            >label{
+                padding: 0;
+                margin: 0;
+                color: #330c37;
+                font-weight: 600;
+                text-align: center;
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+                >.icon{
+                    position: absolute;
+                    bottom: 50%;
+                }
+
+                @each $box in $boxs {
+                    >.icon-order-box-s#{$box} {
+                        left: calc(50% - #{($sizeBox / 2)});  
+                    }
+
+                    $sizeBox: ($sizeBox + 12px);
+                }
+
+
+                >span {
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 30%;
+                }
+
+                >input{
+                    position: absolute;
+                    left: calc(50% - 6.5px);
+                    padding: 0;
+                    margin: 0;
+                    bottom: 10%;
+                }
+            }
+        }
+    }
+
+    .nav{
+        &.nav-tabs{
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+            >li{
+                padding: 0;
+                >a{
+                    margin: 0;
+                    color: #330c37;
+                    font-weight: 600;
+                    height: 125px;
+                    text-align: center;
+                    line-height: 135px;
+                    &.tab-first{
+                        border-radius: 6px 0px 0px 6px;
+                    }
+                    &.tab-last{
+                        border-radius: 0px 6px 6px 0px;
+                    }
+
+
+                    :hover{
+                        border-color:#ff4a46;
+                        background-color:#ff4a46;
+                    }
+                }
+
+                &.active{
+                    color: #fff;
+                    >a,a:focus,a:hover{
+                        color: #fff;
+                        cursor: default;
+                        background-color: #ff4a46;
+                        border: 1px solid #ff4a46;
+                        border-bottom-color: #ff4a46;
+                    }
+                }
+            }
+        }
+
+        >li{
+            >a:hover{
+                color: #330c37;
+                border-color:#ff4a46;
+                background-color: #ffffff;
+            }
+        }
+    }
+}
+.ship-order-map {
+    width: 100%;
+}
+.full-map {    
+    height: 100% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+.btn-full-screen {
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+    top: 15px;
+}
+.btn-small-screen {
+    position: fixed;
+    z-index: 1;
+    right: 30px;
+    top: 15px;
+}

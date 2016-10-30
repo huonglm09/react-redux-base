@@ -1,0 +1,80 @@
+@import "../../../public/styles/variables.scss";
+@import "../../../public/styles/mixins.scss";
+
+@each $f in $series {
+    .f-#{$f} {
+        font-size: #{$f}px;
+    }
+}
+
+@each $color in $colors {
+    .color-#{$color} {
+        color: #{'#'}#{$color};
+    }
+}
+
+@each $border in $colors {
+    .border-#{$border} {
+        border: 3px solid #{'#'}#{$border};
+    }
+}
+
+header {
+    .header-top {
+        background: url('../../../public/images/headers/header-bunting.png') top center repeat-x #fff;
+        padding-top: 10px;
+
+        .top-logo {
+            img {
+                margin: 42px 0;
+            }
+        }
+
+        .search-area {
+            float: right;
+            margin-top: 35px;
+
+            .search-icon {
+                margin-left: -15px;
+            }
+        }
+
+        .menu {
+            background: #eaeaea;
+            margin-bottom: 15px;
+
+            .main-menu {
+                padding: 0px !important;
+
+                .menu-link {
+                    float: left;
+                    text-align: center;
+                    padding-bottom: 0;
+                    width: 20%;
+
+                    .menu-item {
+                        font-size: 18px !important;
+                        line-height: 3 !important;
+                        padding: 10px 0 0 !important;
+                        font-weight: bold !important;
+                        color: #2C2C2D !important;
+                    }
+
+                    .menu-border {
+                        display: block;
+                        width: 90%;
+                        margin: 0 5% 0 5%;
+                    }
+                }
+
+                .menu-link:hover {
+                    background: #ffffff !important;
+
+                    .menu-item {
+                        background: #ffffff !important;
+                    }
+                }
+            }
+        }
+    }
+}

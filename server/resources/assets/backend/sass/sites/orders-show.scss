@@ -1,0 +1,12 @@
+@import "../vendor/variables";
+@import "../vendor/mixins";
+
+.css-show-order{
+    .cover-order-map{
+        min-height: 400px;
+    }
+    
+    .form-control-static {
+        line-height: 30px;
+    }
+}

@@ -1,0 +1,90 @@
+@import "../vendor/variables";
+@import "../vendor/mixins";
+
+#userForm {
+    .form-style-order {
+        .form-group {
+            padding: 0px 5px;
+        }
+    }
+}
+
+.filter-list {
+    margin: 20px 0px 30px 0px;
+    
+    .area-search {
+        margin-left: -15px;
+        position: relative;
+        
+        i {
+            position: absolute;
+            left: 25px;
+            top: 10px;
+        }
+        .point-search {
+            width: 80%;
+            height: 35px;
+            border: 1px solid #dddddd;
+            padding-left: 30px;
+            
+            @include border-radius(5px);
+        }
+    }
+    .area-filter {
+        margin-right: -15px;
+        padding-right: 0px;
+        
+        .point-filter {
+            width: 40%;
+            height: 35px;
+            border: 1px solid #dddddd;
+            padding-left: 5px;
+            
+            @include border-radius(5px);
+        }
+    }
+}
+
+.table-view {
+    border: 1px solid #dddddd;
+    margin: 5px 0px;
+    width: 100%;
+    
+    @include border-radius(5px);
+    
+    .table-header {
+        border-bottom: 1px solid #dddddd;
+        min-height: 40px;
+        padding: 10px 0px;
+        margin-bottom: 5px;
+        background: #ffffff;
+        font-weight: bold;
+        
+        @include border-radius(5px 5px 0px 0px);
+    }
+    
+    .table-content {
+        background: #ffffff;
+        border-top: 1px solid #dddddd;
+        
+        @include border-radius(0px 0px 5px 5px);
+        
+        .row-group {
+            line-height: 30px;
+            padding: 10px 0px;
+        }
+        .row-group:hover {
+            background: #fdf8eb;
+            cursor: pointer;
+            /*border: 1px solid #fcc382;*/
+            
+        }        
+    }        
+}
+
+.table-footer {
+    .pagination {
+        margin: 0px;
+        margin-right: 8px;
+    }
+}

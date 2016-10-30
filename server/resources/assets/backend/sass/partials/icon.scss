@@ -1,0 +1,80 @@
+@import "../vendor/variables";
+@import "../vendor/mixins";
+
+svg{
+    fill: currentColor;
+}
+.icon{
+    @each $si in $sizeIcons {    
+        &.i-#{$si} {
+            width: #{$si}px;
+            height: #{$si}px;
+            &.i-vc{
+                top: calc(50% - #{$si/2}px);
+            }
+            &.i-hc{
+                left: calc(50% - #{$si/2}px);
+            } 
+        }
+    }
+    @each $s in $series {    
+        &.i-right-#{$s} {
+            right: #{$s}px;
+        }
+        
+        &.i-right-neg-#{$s} {
+            right: -#{$s}px;
+        }
+        
+        &.i-left-#{$s} {
+            left: #{$s}px; 
+        }
+        &.i-left-neg-#{$s} {
+            left: -#{$s}px; 
+        }
+    }
+
+    &.i-pot{
+        position: absolute;
+        z-index: 1;
+    }
+    &.i-right{
+        right: 0;
+    }
+    &.i-left{
+        left: 0;
+    }
+
+    &.icon-order-report, &.icon-rental-car{
+        position: absolute;
+        width: 50px;
+        height: 45px;
+        z-index: 1;
+        left: calc(50% - 25px);
+        top: 20px;
+    }
+
+
+    &.icon-order-calendar, &.icon-order-user-info{
+        position: absolute;
+        width: 20px;
+        height: 20px
+    }
+
+    &.icon-order-arrow-to-left{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: -10px;
+        top: calc(50% - 10px);
+    }
+
+    @each $box in $boxs {
+        &.icon-order-box-s#{$box} {
+            width: $sizeBox;
+            height: $sizeBox;    
+        }
+
+        $sizeBox: ($sizeBox + 12px);
+    }
+}
