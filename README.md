@@ -1,6 +1,6 @@
-# Redux Real World Example
+# React and Redux Base
 
-This project template was built with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project built with News application
 
 ## Available Scripts
 
