@@ -11,16 +11,16 @@ class Footer extends Component {
                         <Grid>
                             <Row>
                                 <Col md={3}>
-                                    demo
+                                    Footer 1
                                 </Col>
                                 <Col md={3}>
-                                    demo
+                                    Footer 2
                                 </Col>
                                 <Col md={3}>
-                                    demo
+                                    Footer 3
                                 </Col>
                                 <Col md={3}>
-                                    demo
+                                    Footer 4
                                 </Col>
                             </Row>
                         </Grid>
@@ -29,7 +29,7 @@ class Footer extends Component {
                         <Grid>
                             <Row>
                                 <Col md={12}>
-                                    demo
+                                    Footer Logos
                                 </Col>
                             </Row>
                         </Grid>

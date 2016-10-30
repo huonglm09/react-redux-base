@@ -1,7 +1,5 @@
-import * as global from './global'
-import * as auth from './auth'
+export const API_URL = 'http://news.com.vn/server/public/api/';
 
-module.exports = {
-    ...global,
-    ...auth
-}
+export const API_AUTH_LOGIN = API_URL + 'auth/login';
+
+export const API_CATEGORY_LIST = API_URL + 'categories';

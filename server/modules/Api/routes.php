@@ -14,6 +14,8 @@
 //==== API CORS Router ====
 Route::group(['middleware' => ['cors'], 'prefix' => 'api'], function () {
     Route::post('/auth/login', 'Api\Controllers\AuthController@login');
+
+    Route::get('/categories', 'Api\Controllers\CategoriesController@all');
 });
 
 // Catch all undefined routes. Always gotta stay at the bottom since order of routes matters.

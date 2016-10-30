@@ -6,7 +6,7 @@ import Login from '../components/Login/Login'
 
 class LoginPage extends Component {
     componentDidMount() {
-        document.title = "News | Login Page"
+        document.title = "News | Login Page"        
     }
 
     render() {
