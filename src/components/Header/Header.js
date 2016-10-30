@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
-import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/MenuItem'
+import TextField from 'material-ui/TextField'
 import {Link} from 'react-router'
-import TextField from 'material-ui/TextField';
 
 import './header.scss'
 
@@ -32,29 +31,28 @@ class Header extends Component {
 
                         <div className="menu">
                 			<Grid>
-                                  <Menu className="main-menu">
-                                      <Link className="menu-link" to={`/category/maps`}>
-                                          {this.props.children}
-                                          <MenuItem className="menu-item" primaryText="Life Hacks" />
-                                          <div className="menu-border border-FFD401"></div>
-                                      </Link>
-                                      <Link className="menu-link" to={`/category/maps`}>
-                                          <MenuItem className="menu-item" primaryText="Saving Money" />
-                                          <div className="menu-border border-A8D9D6"></div>
-                                      </Link>
-                                      <Link className="menu-link" to={`/category/maps`}>
-                                          <MenuItem className="menu-item" primaryText="Making & Doing" />
-                                          <div className="menu-border border-EC6607"></div>
-                                      </Link>
-                                      <Link className="menu-link" to={`/category/maps`}>
-                                          <MenuItem className="menu-item" primaryText="Home & Garden" />
-                                          <div className="menu-border border-3AB54B"></div>
-                                      </Link>
-                                      <Link className="menu-link" to={`/category/maps`}>
-                                          <MenuItem className="menu-item" primaryText="Health & Wellbeing" />
-                                          <div className="menu-border border-75AADC"></div>
-                                      </Link>
-                                  </Menu>
+                              <div className="main-menu">
+                                  <Link className="menu-link" to={`/category/maps`}>
+                                      <MenuItem className="menu-item" primaryText="Life Hacks" />
+                                      <div className="menu-border border-FFD401"></div>
+                                  </Link>
+                                  <Link className="menu-link" to={`/category/maps`}>
+                                      <MenuItem className="menu-item" primaryText="Saving Money" />
+                                      <div className="menu-border border-A8D9D6"></div>
+                                  </Link>
+                                  <Link className="menu-link" to={`/category/maps`}>
+                                      <MenuItem className="menu-item" primaryText="Making & Doing" />
+                                      <div className="menu-border border-EC6607"></div>
+                                  </Link>
+                                  <Link className="menu-link" to={`/category/maps`}>
+                                      <MenuItem className="menu-item" primaryText="Home & Garden" />
+                                      <div className="menu-border border-3AB54B"></div>
+                                  </Link>
+                                  <Link className="menu-link" to={`/category/maps`}>
+                                      <MenuItem className="menu-item" primaryText="Health & Wellbeing" />
+                                      <div className="menu-border border-75AADC"></div>
+                                  </Link>
+                              </div>
                 			</Grid>
                 	    </div>
                     </div>
