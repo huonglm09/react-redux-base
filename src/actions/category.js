@@ -2,26 +2,27 @@ import * as types from '../types'
 import * as constants from '../constants'
 import * as middleware from '../middleware'
 
-// auth action creator
+// category list action creator
 export const categoryListRequest = (data) => ({type: types.CATEGORY_LIST_REQUEST, data});
 
 export const categoryListFailed = (data) => ({type: types.CATEGORY_LIST_FAILED, data});
 
 export const categoryListSuccessfully = (data) => ({type: types.CATEGORY_LIST_SUCCESSFULLY, data});
 
-export const categoryFetch = (data) => { return true }
+// category list action fetch
+export const categoryListFetch = (data) => { return true }
 
-export const categoryShouldFetch = (state, data) => { return true }
+export const categoryListShouldFetch = (state, data) => { return true }
 
-export const categoryFetchIfNeeded = (data) => {
+export const categoryListFetchIfNeeded = (data) => {
     return (dispatch, getState) => {
-        if (categoryShouldFetch(getState(), data)) {
-            return dispatch(categoryFetch(data))
+        if (categoryListShouldFetch(getState(), data)) {
+            return dispatch(categoryListFetch(data))
         }
     };
 }
 
-// auth action mid
+// category list action mid
 export const midCategoryList = (data = {type : 'categoryList'}) => middleware.callApi(
     constants.API_CATEGORY_LIST, {
         method: 'get'

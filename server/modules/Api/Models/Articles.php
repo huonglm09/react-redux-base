@@ -18,7 +18,7 @@ class Articles extends Model {
      *
      * @var array
      */
-    protected $fillable = ['status', 'category_id', 'type', 'title', 'slug', 'description', 'order', 'image', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = ['status', 'category_id', 'type', 'title', 'slug', 'description', 'order', 'image', 'feature', 'created_at', 'updated_at', 'deleted_at'];
 
     /**
      * Get the order record associated with the notification.

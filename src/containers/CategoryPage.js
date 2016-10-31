@@ -10,24 +10,23 @@ class CategoryPage extends Component {
 
     componentWillMount() {
         this.props.dispatch(categoryActions.midCategoryList());
-
-        const data = {
-            'type': 'listArticleByCategory',
-            'categoryId': this.props.params.category
-        }
-
-        this.props.dispatch(articleActions.midArticleList(data));
+        this.dispatchArticleList(this.props.params.category);
+        this.dispatchSlideshow(this.props.params.category);
     }
 
     componentWillReceiveProps(nextProps) {
         if(nextProps.params.category !== this.props.params.category) {
-            const data = {
-                'type': 'listArticleByCategory',
-                'categoryId': nextProps.params.category
-            }
-
-            this.props.dispatch(articleActions.midArticleList(data));
+            this.dispatchArticleList(nextProps.params.category);
+            this.dispatchSlideshow(nextProps.params.category);
         }
+    }
+
+    dispatchArticleList(categoryId) {
+        this.props.dispatch(articleActions.midArticleList({'categoryId': categoryId}));
+    }
+
+    dispatchSlideshow(categoryId) {
+        this.props.dispatch(articleActions.midArticleListSlideshow({'categoryId': categoryId}));
     }
 
     componentDidMount() {
@@ -35,10 +34,10 @@ class CategoryPage extends Component {
     }
 
     render() {
-        const {categories, articles} = this.props
+        const {categories, articles, slideshows} = this.props
         return (
             <Layout categories={categories}>
-                <Slideshow articles={articles}/>
+                <Slideshow slideshows={slideshows}/>
                 <Article articles={articles}/>
             </Layout>
         )
@@ -49,7 +48,7 @@ class CategoryPage extends Component {
  * Map the state to props.
  */
 const mapStateToProps = (state) => {
-    let { categoryReducer, articleReducer } = state;
+    let { categoryReducer, articleReducer, slideshowReducer } = state;
 
     if(categoryReducer != null && typeof categoryReducer !== 'undefined') {
         categoryReducer = categoryReducer.data
@@ -59,9 +58,14 @@ const mapStateToProps = (state) => {
         articleReducer = articleReducer.data
     }
 
+    if(slideshowReducer != null && typeof slideshowReducer !== 'undefined') {
+        slideshowReducer = slideshowReducer.data
+    }
+
     return {
         categories : categoryReducer,
-        articles : articleReducer
+        articles : articleReducer,
+        slideshows : slideshowReducer
     };
 };
 

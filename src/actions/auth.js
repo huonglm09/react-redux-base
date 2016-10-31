@@ -3,13 +3,14 @@ import * as types from '../types'
 import * as constants from '../constants'
 import * as middleware from '../middleware'
 
-// auth action creator
+// auth login action creator
 export const authLoginRequest = (data) => ({type: types.AUTH_LOGIN_REQUEST, data});
 
 export const authLoginFailed = (data) => ({type: types.AUTH_LOGIN_FAILED, data});
 
 export const authLoginSuccessfully = (data) => ({type: types.AUTH_LOGIN_SUCCESSFULLY,data});
 
+// auth login action fetch
 export const authLoginFetch = (data) => { return true }
 
 export const authLoginShouldFetch = (state, page) => { return true }
@@ -22,7 +23,7 @@ export const authLoginFetchIfNeeded = (data) => {
     };
 }
 
-// auth action mid
+// auth login action mid
 export const midLogin = (data) => middleware.callApi(
     constants.API_AUTH_LOGIN, {
         method: 'post',

@@ -37,6 +37,24 @@ class ArticlesController extends BaseController {
         ]);
     }
 
+    public function getFeatureByCategory($slug) {
+        if(!empty($slug)) {
+            $category = Categories::where('slug', $slug)->first();
+        }
+
+        $data = [];
+
+        if(!empty($category)) {
+            $data = Articles::where('status', '1')->where('feature', '1')->where('category_id', $category->id)->orderBy('order', 'ASC')->get();
+        }
+
+        return response()->json([
+          'status' => true,
+          'msg' => 'List article by category',
+          'data' => $data
+        ]);
+    }
+
     public function create(Request $request) {
         $result = array('status' => false, 'title' => 'Thêm mới bài viết', 'action' => 'create', 'data' => '', 'url' => URL::action('\Api\Controllers\ArticlesController@create'), 'messages' => array('success' => '', 'errors' => ''));
 

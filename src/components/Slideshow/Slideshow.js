@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col, Image } from 'react-bootstrap'
+import { Row, Col, Image } from 'react-bootstrap'
 import {Link} from 'react-router'
 import Slider from 'react-slick'
 
@@ -23,6 +23,7 @@ class Slideshow extends Component {
     }
 
     renderSlideshows() {
+        let slideshow = null
         const settings = {
               dots: true,
               infinite: true,
@@ -31,27 +32,59 @@ class Slideshow extends Component {
               slidesToScroll: 1
         }
 
-        return (
-            <div className="slideshow">
-                <Slider {...settings}>
-                      <div>demosdfasdfasdfasdfasd</div>
-                      <div>demosdfasdfasdfasdfasd</div>
-                      <div>demosdfasdfasdfasdfasd</div>
-                      <div>demosdfasdfasdfasdfasd</div>
-                      <div>demosdfasdfasdfasdfasd</div>
-                      <div>demosdfasdfasdfasdfasd</div>
-                      <div>demosdfasdfasdfasdfasd</div>
-                      <div>demosdfasdfasdfasdfasd</div>
-                </Slider>
-            </div>
-        )
+        if(typeof this.state.slideshows !== 'undefined' && this.state.slideshows !== null) {
+            slideshow = this.state.slideshows.map(item => {
+                return (
+                    <div key={item.id} className="slideshow-wrapper">
+                        <Row>
+                            <Col md={8} className="slideshow-img">
+                                <Link to={`/`}>
+                                    <Image src={item.image} responsive />
+                                </Link>
+                            </Col>
+                            <Col md={4} className="slideshow-content">
+                                <Row>
+                                    <Col md={12} className="slideshow-create">
+                                        Ngày đăng: {item.created_at}
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col md={12} className="slideshow-title">
+                                        {item.title}
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col md={12} className="slideshow-des">
+                                        {item.description}
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </div>
+                )
+            })
+        }
+
+        if(slideshow !== null) {
+            return (
+                <Row>
+                    <Col md={12} className="slideshow">
+                        <div className="slideshow-main">
+                            <Slider {...settings}>
+                                {slideshow}
+                            </Slider>
+                        </div>
+                    </Col>
+                </Row>
+            )
+        }
+
+        return slideshow
     }
 
     render() {
-
-
         return (
-          <section>
+            <section>
                 {this.renderSlideshows()}
             </section>
         )

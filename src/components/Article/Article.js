@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Grid, Col, Image } from 'react-bootstrap'
+import { Col, Image } from 'react-bootstrap'
 import {Link} from 'react-router'
+import Masonry from 'react-masonry-component'
 
 import './article.scss'
 
@@ -30,7 +31,7 @@ class Article extends Component {
                 let color = colors[Math.floor(key)]
 
                 return (
-                    <Col md={4} key={item.id}>
+                    <Col md={4} key={item.id} className="article-masonry">
                         <div className="article-item">
                             <div className="article-img">
                                 <Link to={`/`}>
@@ -48,6 +49,10 @@ class Article extends Component {
                                 <div className="article-des">
                                     {item.description}
                                 </div>
+                                <div className="article-share border-top-thin">
+                                    <i className="fa fa-share-alt" aria-hidden="true"></i>
+                                    SHARE
+                                </div>
                             </div>
                         </div>
                     </Col>
@@ -57,10 +62,22 @@ class Article extends Component {
     }
 
     render() {
+        const masonryOptions = {
+            transitionDuration: 1000
+        }
+
         return (
           <section>
-                <div className="articles">                     
-                     {this.renderArticles()}
+                <div className="articles">
+                    <Masonry
+                        className={'article-masonry'}
+                        elementType={'div'}
+                        options={masonryOptions}
+                        disableImagesLoaded={false}
+                        updateOnEachImageLoad={false}
+                    >
+                        {this.renderArticles()}
+                    </Masonry>
                 </div>
             </section>
         )
