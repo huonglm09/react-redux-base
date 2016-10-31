@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Api\Facades\MainFacade;
+use Api\Models\Categories;
 
 class CategoriesController extends Controller {
 
@@ -20,13 +21,7 @@ class CategoriesController extends Controller {
      * @return array
      */
     public function all() {
-        $data = [
-          ['title' => 'Life Hacks'],
-          ['title' => 'Saving Money'],
-          ['title' => 'Making & Doing'],
-          ['title' => 'Home & Garden'],
-          ['title' => 'Health & Wellbeing']
-        ];
+        $data = Categories::where('status', '1')->orderBy('order', 'ASC')->get();
 
         return response()->json([
           'status' => true,

@@ -1,16 +1,10 @@
 import React, {Component, PropTypes} from 'react'
-import {browserHistory} from 'react-router'
 
 class App extends Component {
-
-    handleChange = nextValue => {
-        browserHistory.push(`/${nextValue}`)
-    }
-
     render() {
         return (
             <div className="wrapper">
-                {this.props.children}                
+                {this.props.children}
             </div>
         )
     }

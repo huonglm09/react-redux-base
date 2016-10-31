@@ -23,17 +23,25 @@ class Header extends Component {
         }
     }
 
-    render() {
-        let menu = '';
-        if(typeof this.props.categories !== 'undefined' && this.props.categories !== null) {
-            this.props.categories.map(function(item) {
-                return menu = <Link className="menu-link" to={`/category/` + item.title}>
-                                  <MenuItem className="menu-item" primaryText={item.title} />
-                                  <div className="menu-border border-FFD401"></div>
-                              </Link>
+    renderListCategory() {
+        let colors = ['FFD401', 'A8D9D6', 'EC6607', '3AB54B', '75AADC']
+        if(typeof this.state.categories !== 'undefined' && this.state.categories !== null) {
+            return this.state.categories.map(item => {
+                const key = Math.random()*colors.length
+                let color = colors[Math.floor(key)]
+                colors.splice(key, 1);
+
+                return (
+                    <Link key={item.title} className="menu-link" to={`/chuyen-muc/` + item.slug}>
+                          <MenuItem className="menu-item" primaryText={item.title} />
+                          <div className={"menu-border border-" + color}></div>
+                    </Link>
+                )
             })
         }
+    }
 
+    render() {
         return (
           <header>
                 <div className="header-top">
@@ -42,7 +50,7 @@ class Header extends Component {
                              <Col md={6}>
                                  <div className="top-logo">
                                      <Link to={`/`}>
-                                         <Image src="./images/logos/tesco-living-logo.png" responsive />
+                                         <Image src="/images/logos/logo.png" responsive />
                                      </Link>
                                  </div>
                              </Col>
@@ -58,7 +66,7 @@ class Header extends Component {
                     <div className="menu">
             			<Grid>
                           <div className="main-menu">
-                              {menu}
+                              {this.renderListCategory()}
                           </div>
             			</Grid>
             	    </div>

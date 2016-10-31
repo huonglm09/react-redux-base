@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux';
 import * as categoryActions from '../actions/category'
 import Layout from '../components/Layout/Layout'
+import Article from '../components/Article/Article'
 
 class HomePage extends Component {
 
@@ -10,20 +11,18 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-        document.title = "News | Home Page"
+        document.title = "Sắc màu công nghệ | Trang chủ"
     }
 
     componentWillReceiveProps(nextProps) {
-    
+
     }
 
     render() {
         const {categories} = this.props
         return (
             <Layout categories={categories}>
-                <div>
-                    This is home page
-                </div>
+                <Article />
             </Layout>
         )
     }

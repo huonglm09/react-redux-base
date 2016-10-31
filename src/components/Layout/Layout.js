@@ -9,7 +9,7 @@ import './layout.scss'
 class Layout extends Component {
     constructor(props) {
         super(props);
-
+        
         this.state = {
             categories : null
         };

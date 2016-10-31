@@ -3,6 +3,7 @@
 namespace Api\Controllers;
 
 use Api\Controllers\BaseController;
+use Api\Models\Categories;
 use Api\Models\Articles;
 use Api\Validations\ArticleValidate;
 use Illuminate\Http\Request;
@@ -12,39 +13,28 @@ class ArticlesController extends BaseController {
 
     protected $model;
 
-    public function __construct() {        
+    public function __construct() {
         parent::__construct();
-        
-        $this->model = new Articles();        
-    }    
 
-    public function index(Request $request) {
-        $title = 'Danh sách bài viết';
-        
-        $field = $request->get('field');
-        $sort = $request->get('sort');
+        $this->model = new Articles();
+    }
 
-        $obj = $this->model;
-
-        if (empty($field) && empty($sort)) {
-            $obj = $obj->orderBy('order', 'asc')->orderBy('created_at', 'desc')->paginate($this->perPage);
-        } else {            
-            $obj = $obj->orderBy($field, $sort)->paginate($this->perPage);
+    public function getByCategory($slug) {
+        if(!empty($slug)) {
+            $category = Categories::where('slug', $slug)->first();
         }
 
-        $request->get('keyword') ? $keyword = $request->get('keyword') : 1 == 1;
-        if (isset($keyword)) {
-            $obj = $this->model->where(function ($query) use ($keyword) {
-                        $query->where('title', 'like', '%' . $keyword . '%');
-                    })
-                    ->orderBy('order', 'asc')
-                    ->orderBy('created_at', 'desc')
-                    ->paginate($this->perPage);
-        } else {
-            $keyword = null;
-        }               
+        $data = [];
 
-        return view('Api::backend.articles.index', compact('obj', 'keyword', 'field', 'sort', 'title'));
+        if(!empty($category)) {
+            $data = Articles::where('status', '1')->where('category_id', $category->id)->orderBy('order', 'ASC')->get();
+        }
+
+        return response()->json([
+          'status' => true,
+          'msg' => 'List article by category',
+          'data' => $data
+        ]);
     }
 
     public function create(Request $request) {
@@ -85,29 +75,29 @@ class ArticlesController extends BaseController {
         return view('Api::backend.articles.form', $result);
     }
 
-    public function doSave($data, $result, $obj = null) {                
+    public function doSave($data, $result, $obj = null) {
         $data['slug'] = str_slug($data['title'], "-");
         $data['order'] = (empty($data['order']) ? 1 : $data['order']);
-        
-        if (!empty($obj)) {                
+
+        if (!empty($obj)) {
             $validate = new ArticleValidate();
-            $validator = $validate->validatorUpdate($data);            
+            $validator = $validate->validatorUpdate($data);
             if ($validator->errors()->count() > 0) {
-                $result['messages']['errors'] = $validator->errors()->getMessages();            
+                $result['messages']['errors'] = $validator->errors()->getMessages();
                 return $result;
             }
-            
+
             $obj->update($data);
-        } else {    
+        } else {
             $validate = new ArticleValidate();
-            $validator = $validate->validatorCreate($data);            
+            $validator = $validate->validatorCreate($data);
             if ($validator->errors()->count() > 0) {
-                $result['messages']['errors'] = $validator->errors()->getMessages();            
+                $result['messages']['errors'] = $validator->errors()->getMessages();
                 return $result;
             }
-            
+
             $data['type'] = 'static';
-            
+
             $obj = $this->model->create($data);
         }
 
@@ -129,8 +119,8 @@ class ArticlesController extends BaseController {
             $obj = $this->model->find($id);
             if ($obj) {
                 if($obj->type !== 'config') {
-                    $obj->forceDelete();    
-                }                          
+                    $obj->forceDelete();
+                }
             }
         }
 
