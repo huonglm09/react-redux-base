@@ -145,7 +145,7 @@ module.exports = {
             // Apply to sass
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style", "css!sass?importLoaders=1&-autoprefixer!postcss")
+                loader: ExtractTextPlugin.extract("style", "css!sass")
             },
             // "url" loader works just like "file" loader but it also embeds
             // assets smaller than specified size as data URLs to avoid requests.
