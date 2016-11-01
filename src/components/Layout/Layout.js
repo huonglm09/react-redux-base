@@ -9,7 +9,7 @@ import './layout.scss'
 class Layout extends Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             categories : null
         };
@@ -27,7 +27,7 @@ class Layout extends Component {
         return (
             <MuiThemeProvider>
                 <div className="main-wrapper">
-                    <Header categories={this.state.categories}/>
+                    <Header categories={this.state.categories} activeCategory={this.props.activeCategory}/>
 
                     <Grid>
                         {this.props.children}

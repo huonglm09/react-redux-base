@@ -36,7 +36,7 @@ class CategoryPage extends Component {
     render() {
         const {categories, articles, slideshows} = this.props
         return (
-            <Layout categories={categories}>
+            <Layout categories={categories} activeCategory={this.props.params.category}>
                 <Slideshow slideshows={slideshows}/>
                 <Article articles={articles}/>
             </Layout>

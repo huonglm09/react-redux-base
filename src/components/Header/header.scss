@@ -67,7 +67,8 @@ header {
                     }
                 }
 
-                .menu-link:hover {
+                .menu-link:hover,
+                .menu-link.active {
                     background: #ffffff !important;
 
                     .menu-item {

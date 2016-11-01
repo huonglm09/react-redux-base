@@ -1,0 +1,39 @@
+footer {
+    background: #393A40;
+    color: #CCC;
+    margin-top: 40px;
+
+    .copyright {
+        color: #2C2C2D;
+        padding-top: 32px;
+    }
+
+    .f-col {
+        padding-bottom: 20px;
+
+        .row {
+            padding: 10px 25px;
+        }
+
+        .f-title {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .f-row {
+            font-size: 17px;
+            line-height: 1.4;
+            cursor: pointer;
+        }
+
+        .f-row:hover {
+            background: #4d4d4d;
+        }
+    }
+
+    .logos {
+        background: #f1e8e0;
+        height: 80px;
+    }
+}

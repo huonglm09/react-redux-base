@@ -31,8 +31,13 @@ class Header extends Component {
                 let color = colors[Math.floor(key)]
                 colors.splice(key, 1);
 
+                let classActive = ''
+                if(this.props.activeCategory === item.slug) {
+                    classActive = ' active'
+                }
+
                 return (
-                    <Link key={item.title} className="menu-link" to={`/chuyen-muc/` + item.slug}>
+                    <Link key={item.title} className={"menu-link" + classActive} to={`/chuyen-muc/` + item.slug}>
                           <MenuItem className="menu-item" primaryText={item.title} />
                           <div className={"menu-border border-" + color}></div>
                     </Link>
