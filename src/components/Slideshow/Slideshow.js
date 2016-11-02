@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Row, Col, Image } from 'react-bootstrap'
 import {Link} from 'react-router'
 import Slider from 'react-slick'
+import IconButton from 'material-ui/IconButton'
+import StarBorder from 'material-ui/svg-icons/toggle/star-border'
+import ActionGrade from 'material-ui/svg-icons/action/grade';
 
 import './slideshow.scss'
 
@@ -10,14 +13,26 @@ class Slideshow extends Component {
         super(props);
 
         this.state = {
-            slideshows : null
+            slideshows : null,
+            activeCategory : null
         };
     }
 
     componentWillReceiveProps(nextProps) {
+        let states = this.state;
+
         if(nextProps.slideshows !== this.props.slideshows) {
-            let states = this.state;
             states.slideshows = nextProps.slideshows;
+            this.setState(states);
+        }
+
+        if(nextProps.activeCategory !== this.props.activeCategory) {
+            states.activeCategory = nextProps.activeCategory;
+            this.setState(states);
+        }
+
+        if(this.state.activeCategory === null && nextProps.activeCategory !== null && nextProps.activeCategory !== 'undefined') {
+            states.activeCategory = nextProps.activeCategory;
             this.setState(states);
         }
     }
@@ -38,9 +53,20 @@ class Slideshow extends Component {
                     <div key={item.id} className="slideshow-wrapper">
                         <Row>
                             <Col md={8} className="slideshow-img">
-                                <Link to={`/`}>
+                                <Link to={`/chuyen-muc/` + this.state.activeCategory}>
                                     <Image src={item.image} responsive />
                                 </Link>
+                                <div className="slideshow-star">
+                                    <IconButton>
+                                        <ActionGrade color='#FFFFFF' />
+                                    </IconButton>
+                                    <IconButton>
+                                        <StarBorder color='#FFFFFF' />
+                                    </IconButton>
+                                    <IconButton>
+                                        <StarBorder color='#FFFFFF' />
+                                    </IconButton>
+                                </div>
                             </Col>
                             <Col md={4} className="slideshow-content">
                                 <Row>
@@ -68,7 +94,7 @@ class Slideshow extends Component {
         if(slideshow !== null) {
             return (
                 <Row>
-                    <Col md={12} className="slideshow">
+                    <Col md={12} xs={12} className="slideshow">
                         <div className="slideshow-main">
                             <Slider {...settings}>
                                 {slideshow}

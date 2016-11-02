@@ -6,3 +6,4 @@ export const API_CATEGORY_LIST = API_URL + 'categories';
 
 export const API_ARTICLE_LIST = API_URL + 'category';
 export const API_ARTICLE_SLIDESHOW = API_URL + 'category/feature';
+export const API_ARTICLE_SEARCH = API_URL + 'search';

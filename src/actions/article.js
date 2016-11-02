@@ -1,3 +1,4 @@
+import { helper } from '../commons'
 import * as types from '../types'
 import * as constants from '../constants'
 import * as middleware from '../middleware'
@@ -8,19 +9,6 @@ export const articleListRequest = (data) => ({type: types.ARTICLE_LIST_REQUEST, 
 export const articleListFailed = (data) => ({type: types.ARTICLE_LIST_FAILED, data});
 
 export const articleListSuccessfully = (data) => ({type: types.ARTICLE_LIST_SUCCESSFULLY, data});
-
-// article list action fetch
-export const articleListFetch = (data) => { return true }
-
-export const articleListShouldFetch = (state, data) => { return true }
-
-export const articleListFetchIfNeeded = (data) => {
-    return (dispatch, getState) => {
-        if (articleListShouldFetch(getState(), data)) {
-            return dispatch(articleListFetch(data))
-        }
-    };
-}
 
 // article list action mid
 export const midArticleList = (data) => middleware.callApi(
@@ -40,19 +28,6 @@ export const articleSlideshowFailed = (data) => ({type: types.ARTICLE_SLIDESHOW_
 
 export const articleSlideshowSuccessfully = (data) => ({type: types.ARTICLE_SLIDESHOW_SUCCESSFULLY, data});
 
-// article slideshow action fetch
-export const articleSlideshowFetch = (data) => { return true }
-
-export const articleSlideshowShouldFetch = (state, data) => { return true }
-
-export const articleSlideshowFetchIfNeeded = (data) => {
-    return (dispatch, getState) => {
-        if (articleSlideshowShouldFetch(getState(), data)) {
-            return dispatch(articleSlideshowFetch(data))
-        }
-    };
-}
-
 // article slideshow action mid
 export const midArticleListSlideshow = (data) => middleware.callApi(
     constants.API_ARTICLE_SLIDESHOW + '/' + data.categoryId , {
@@ -61,4 +36,23 @@ export const midArticleListSlideshow = (data) => middleware.callApi(
     articleSlideshowRequest(data),
     articleSlideshowSuccessfully,
     articleSlideshowFailed
+);
+
+
+// article search action creator
+export const articleSearchRequest = (data) => ({type: types.ARTICLE_SEARCH_REQUEST, data});
+
+export const articleSearchFailed = (data) => ({type: types.ARTICLE_SEARCH_FAILED, data});
+
+export const articleSearchSuccessfully = (data) => ({type: types.ARTICLE_SEARCH_SUCCESSFULLY, data});
+
+// article search action mid
+export const midArticleSearch = (data) => middleware.callApi(
+    constants.API_ARTICLE_SEARCH , {
+        method: 'post',
+        body: helper.convertObjectFormData(data)
+    },
+    articleSearchRequest(data),
+    articleSearchSuccessfully,
+    articleSearchFailed
 );

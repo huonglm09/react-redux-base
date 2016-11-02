@@ -50,13 +50,17 @@ class HomePage extends Component {
         this.props.dispatch(articleActions.midArticleListSlideshow({'categoryId': categoryId}));
     }
 
+    dispatchSearch(keyword) {
+        this.props.dispatch(articleActions.midArticleSearch({'keyword': keyword}));
+    }
+
     render() {
-        const {categories, articles, slideshows} = this.props
+        const {categories, articles, slideshows, searchs} = this.props
 
         return (
-            <Layout categories={categories} activeCategory={this.state.activeCategory}>
-                <Slideshow slideshows={slideshows}/>
-                <Article articles={articles}/>
+            <Layout categories={categories} activeCategory={this.state.activeCategory} searchs={searchs} onSearch={this.dispatchSearch.bind(this)}>
+                <Slideshow slideshows={slideshows} activeCategory={this.state.activeCategory}/>
+                <Article articles={articles} activeCategory={this.state.activeCategory}/>
             </Layout>
         )
     }
@@ -66,7 +70,7 @@ class HomePage extends Component {
  * Map the state to props.
  */
 const mapStateToProps = (state) => {
-     let { categoryReducer, articleReducer, slideshowReducer } = state;
+     let { categoryReducer, articleReducer, slideshowReducer, searchReducer } = state;
 
      if(categoryReducer != null && typeof categoryReducer !== 'undefined') {
          categoryReducer = categoryReducer.data
@@ -80,10 +84,15 @@ const mapStateToProps = (state) => {
          slideshowReducer = slideshowReducer.data
      }
 
+     if(searchReducer != null && typeof searchReducer !== 'undefined') {
+         searchReducer = searchReducer.data
+     }
+
      return {
          categories : categoryReducer,
          articles : articleReducer,
-         slideshows : slideshowReducer
+         slideshows : slideshowReducer,
+         searchs : searchReducer
      };
  };
 

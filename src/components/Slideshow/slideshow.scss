@@ -48,6 +48,18 @@
         }
 
         .slideshow-img {
+            position: relative;
+
+            .slideshow-star {
+                position: absolute;
+                top: 0px;
+                right: 15px;
+
+                button {
+                    margin-left: -20px !important;
+                }
+            }
+
             img {
                 width: 100%;
             }

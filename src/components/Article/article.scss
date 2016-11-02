@@ -16,6 +16,17 @@
 
             .article-border {
                 border-width: 5px;
+                position: relative;
+
+                .article-star {
+                    position: absolute;
+                    top: -50px;
+                    right: -10px;
+
+                    button {
+                        margin-left: -20px !important;                        
+                    }
+                }
             }
 
             .article-content {

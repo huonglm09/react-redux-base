@@ -21,6 +21,10 @@ class CategoryPage extends Component {
         }
     }
 
+    componentDidMount() {
+        document.title = "Sắc màu công nghệ | Danh mục"
+    }
+
     dispatchArticleList(categoryId) {
         this.props.dispatch(articleActions.midArticleList({'categoryId': categoryId}));
     }
@@ -29,16 +33,16 @@ class CategoryPage extends Component {
         this.props.dispatch(articleActions.midArticleListSlideshow({'categoryId': categoryId}));
     }
 
-    componentDidMount() {
-        document.title = "Sắc màu công nghệ | Danh mục"
+    dispatchSearch(keyword) {
+        this.props.dispatch(articleActions.midArticleSearch({'keyword': keyword}));
     }
 
     render() {
         const {categories, articles, slideshows} = this.props
         return (
-            <Layout categories={categories} activeCategory={this.props.params.category}>
-                <Slideshow slideshows={slideshows}/>
-                <Article articles={articles}/>
+            <Layout categories={categories} activeCategory={this.props.params.category} onSearch={this.dispatchSearch.bind(this)}>
+                <Slideshow slideshows={slideshows} activeCategory={this.props.params.category}/>
+                <Article articles={articles} activeCategory={this.props.params.category}/>
             </Layout>
         )
     }
@@ -48,7 +52,7 @@ class CategoryPage extends Component {
  * Map the state to props.
  */
 const mapStateToProps = (state) => {
-    let { categoryReducer, articleReducer, slideshowReducer } = state;
+    let { categoryReducer, articleReducer, slideshowReducer, searchReducer } = state;
 
     if(categoryReducer != null && typeof categoryReducer !== 'undefined') {
         categoryReducer = categoryReducer.data
@@ -62,10 +66,15 @@ const mapStateToProps = (state) => {
         slideshowReducer = slideshowReducer.data
     }
 
+    if(searchReducer != null && typeof searchReducer !== 'undefined') {
+        searchReducer = searchReducer.data
+    }
+
     return {
         categories : categoryReducer,
         articles : articleReducer,
-        slideshows : slideshowReducer
+        slideshows : slideshowReducer,
+        searchs : searchReducer
     };
 };
 

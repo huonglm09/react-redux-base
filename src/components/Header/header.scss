@@ -46,6 +46,16 @@ header {
             .main-menu {
                 padding: 0px !important;
 
+                .menu-icon {
+                    display: none;
+
+                    .menu-cat-list {
+                        display: inline-block;
+                        position: relative;
+                        top: -6px;
+                    }
+                }
+
                 .menu-link {
                     float: left;
                     text-align: center;

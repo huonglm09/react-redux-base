@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Col, Image } from 'react-bootstrap'
 import {Link} from 'react-router'
 import Masonry from 'react-masonry-component'
+import IconButton from 'material-ui/IconButton'
+import StarBorder from 'material-ui/svg-icons/toggle/star-border'
+import ActionGrade from 'material-ui/svg-icons/action/grade';
 
 import './article.scss'
 
@@ -10,14 +13,26 @@ class Article extends Component {
         super(props);
 
         this.state = {
-            articles : null
+            articles : null,
+            activeCategory : null
         };
     }
 
     componentWillReceiveProps(nextProps) {
+        let states = this.state;
+
         if(nextProps.articles !== this.props.articles) {
-            let states = this.state;
             states.articles = nextProps.articles;
+            this.setState(states);
+        }
+
+        if(nextProps.activeCategory !== this.props.activeCategory) {
+            states.activeCategory = nextProps.activeCategory;
+            this.setState(states);
+        }
+
+        if(this.state.activeCategory === null && nextProps.activeCategory !== null && nextProps.activeCategory !== 'undefined') {
+            states.activeCategory = nextProps.activeCategory;
             this.setState(states);
         }
     }
@@ -31,14 +46,26 @@ class Article extends Component {
                 let color = colors[Math.floor(key)]
 
                 return (
-                    <Col md={4} key={item.id} className="article-masonry">
+                    <Col md={4} sm={6} key={item.id} className="article-masonry">
                         <div className="article-item">
                             <div className="article-img">
-                                <Link to={`/`}>
+                                <Link to={`/chuyen-muc/` + this.state.activeCategory}>
                                     <Image src={item.image} responsive />
                                 </Link>
                             </div>
-                            <div className={"article-border border-" + color} />
+                            <div className={"article-border border-" + color}>
+                                <div className="article-star">
+                                    <IconButton>
+                                        <ActionGrade color={color} />
+                                    </IconButton>
+                                    <IconButton>
+                                        <StarBorder color={color} />
+                                    </IconButton>
+                                    <IconButton>
+                                        <StarBorder color={color} />
+                                    </IconButton>
+                                </div>
+                            </div>
                             <div className="article-content">
                                 <div className="article-create">
                                     {item.created_at}

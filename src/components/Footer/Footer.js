@@ -11,7 +11,7 @@ class Footer extends Component {
                     <section className="links">
                         <Grid>
                             <Row>
-                                <Col md={3} className="f-col">
+                                <Col md={3} xs={6} className="f-col">
                                     <Row className="f-title">
                                         Here to Help
                                     </Row>
@@ -25,7 +25,7 @@ class Footer extends Component {
                                         Prize Draw T&Cs
                                     </Row>
                                 </Col>
-                                <Col md={3} className="f-col">
+                                <Col md={3} xs={6} className="f-col">
                                     <Row className="f-title">
                                         About Tesco
                                     </Row>
@@ -39,7 +39,7 @@ class Footer extends Component {
                                         Prize Draw T&Cs
                                     </Row>
                                 </Col>
-                                <Col md={3} className="f-col">
+                                <Col md={3} xs={6} className="f-col">
                                     <Row className="f-title">
                                         Explore Tesco
                                     </Row>
@@ -53,7 +53,7 @@ class Footer extends Component {
                                         Prize Draw T&Cs
                                     </Row>
                                 </Col>
-                                <Col md={3} className="f-col">
+                                <Col md={3} xs={6} className="f-col">
                                     <Row className="f-title">
                                         Tesco Living
                                     </Row>
@@ -73,12 +73,12 @@ class Footer extends Component {
                     <section className="logos">
                         <Grid>
                             <Row>
-                                <Col md={4} className="copyright">
+                                <Col md={4} xs={12} sm={6} className="copyright">
                                     <strong>
                                         Bản quyền thuộc Sắc màu công nghệ © 2016
                                     </strong>
                                 </Col>
-                                <Col md={4} mdOffset={4}>
+                                <Col md={4} mdOffset={4} xs={12} sm={6}>
                                     <Social />
                                 </Col>
                             </Row>

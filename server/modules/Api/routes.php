@@ -19,6 +19,7 @@ Route::group(['middleware' => ['cors'], 'prefix' => 'api'], function () {
 
     Route::get('/category/{slug}', 'Api\Controllers\ArticlesController@getByCategory');
     Route::get('/category/feature/{slug}', 'Api\Controllers\ArticlesController@getFeatureByCategory');
+    Route::post('/search', 'Api\Controllers\ArticlesController@search');
 });
 
 // Catch all undefined routes. Always gotta stay at the bottom since order of routes matters.

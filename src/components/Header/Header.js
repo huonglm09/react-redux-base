@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
 import MenuItem from 'material-ui/MenuItem'
-import TextField from 'material-ui/TextField'
+import IconMenu from 'material-ui/IconMenu'
+import IconButton from 'material-ui/IconButton'
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
+import Search from '../Search/Search'
 import {Link} from 'react-router'
 
 import './header.scss'
@@ -11,14 +14,21 @@ class Header extends Component {
         super(props);
 
         this.state = {
-            categories : null
+            categories : null,
+            searchs : null
         };
     }
 
     componentWillReceiveProps(nextProps) {
+        let states = this.state;
+
         if(nextProps.categories !== this.props.categories) {
-            let states = this.state;
             states.categories = nextProps.categories;
+            this.setState(states);
+        }
+
+        if(nextProps.searchs !== this.props.searchs) {
+            states.searchs = nextProps.searchs;
             this.setState(states);
         }
     }
@@ -52,18 +62,15 @@ class Header extends Component {
                 <div className="header-top">
                      <Grid>
                          <Row>
-                             <Col md={6}>
+                             <Col md={3} xs={12} sm={6}>
                                  <div className="top-logo">
                                      <Link to={`/`}>
                                          <Image src="/images/logos/logo.png" responsive />
                                      </Link>
                                  </div>
                              </Col>
-                            <Col md={6}>
-                                <div className="search-area">
-                                    <TextField hintText="Tìm kiếm"/>
-                                    <i className="search-icon fa fa-search" aria-hidden="true"></i>
-                                </div>
+                            <Col md={6} mdOffset={3} xs={12} sm={6}>
+                                <Search onSearch={this.props.onSearch} searchs={this.state.searchs}/>
                             </Col>
                          </Row>
                      </Grid>
@@ -71,7 +78,21 @@ class Header extends Component {
                     <div className="menu">
             			<Grid>
                           <div className="main-menu">
-                              {this.renderListCategory()}
+                              <div className="menu-list">
+                                  {this.renderListCategory()}
+                              </div>
+                              <div className="menu-icon">
+                                  <IconMenu
+                                    iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+                                    anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+                                    targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                                  >
+                                        {this.renderListCategory()}
+                                  </IconMenu>
+                                  <div className="menu-cat-list">
+                                      Danh sách chuyên mục
+                                  </div>
+                              </div>
                           </div>
             			</Grid>
             	    </div>

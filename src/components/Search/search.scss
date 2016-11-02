@@ -1,0 +1,39 @@
+.search-area {
+    position: relative;
+
+    .search-list {
+        position: absolute;
+        background: #ffffff;
+        z-index: 9;
+        height: 390px;
+        overflow: hidden;
+        width: 255px;
+
+        .row {
+            margin: 0px;
+            padding: 10px 0px;
+
+            .col-md-3 {
+                padding: 0px;
+                padding-left: 10px;
+            }
+
+            .col-md-9 {
+                padding: 0px;
+                font-size: 12px;
+                padding-left: 10px;
+                padding-right: 10px;
+                height: 30px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                word-break: break-all;
+                overflow: hidden;
+            }
+
+            .col-md-12 {
+                border-width: 1px !important;
+                margin-top: 10px;
+            }
+        }
+    }
+}

@@ -54,4 +54,22 @@ class ArticlesController extends BaseController {
           'data' => $data
         ]);
     }
+
+    public function search(Request $request) {
+        $data = [];
+
+        if ($request->isMethod('POST')) {
+            $postData = $request->all();
+
+            if(!empty($postData['keyword'])) {
+                $data = Articles::where('status', '1')->where('title', 'like', '%' . $postData['keyword'] . '%')->orderBy('order', 'ASC')->get();
+            }
+        }
+
+        return response()->json([
+          'status' => true,
+          'msg' => 'Search article by keyword',
+          'data' => $data
+        ]);
+    }
 }

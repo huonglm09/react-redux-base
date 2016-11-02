@@ -5,20 +5,28 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { Grid } from 'react-bootstrap'
 
 import './layout.scss'
+import './responsive.scss'
 
 class Layout extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            categories : null
+            categories : null,
+            searchs : null
         };
     }
 
     componentWillReceiveProps(nextProps) {
+        let states = this.state;
+
         if(nextProps.categories !== this.props.categories) {
-            let states = this.state;
             states.categories = nextProps.categories;
+            this.setState(states);
+        }
+
+        if(nextProps.searchs !== this.props.searchs) {
+            states.searchs = nextProps.searchs;
             this.setState(states);
         }
     }
@@ -27,7 +35,7 @@ class Layout extends Component {
         return (
             <MuiThemeProvider>
                 <div className="main-wrapper">
-                    <Header categories={this.state.categories} activeCategory={this.props.activeCategory}/>
+                    <Header categories={this.state.categories} activeCategory={this.props.activeCategory} searchs={this.state.searchs} onSearch={this.props.onSearch}/>
 
                     <Grid>
                         {this.props.children}

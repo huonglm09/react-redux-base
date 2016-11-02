@@ -9,18 +9,6 @@ export const categoryListFailed = (data) => ({type: types.CATEGORY_LIST_FAILED, 
 
 export const categoryListSuccessfully = (data) => ({type: types.CATEGORY_LIST_SUCCESSFULLY, data});
 
-// category list action fetch
-export const categoryListFetch = (data) => { return true }
-
-export const categoryListShouldFetch = (state, data) => { return true }
-
-export const categoryListFetchIfNeeded = (data) => {
-    return (dispatch, getState) => {
-        if (categoryListShouldFetch(getState(), data)) {
-            return dispatch(categoryListFetch(data))
-        }
-    };
-}
 
 // category list action mid
 export const midCategoryList = (data = {type : 'categoryList'}) => middleware.callApi(
