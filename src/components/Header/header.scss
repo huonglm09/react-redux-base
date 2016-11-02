@@ -1,18 +1,15 @@
 @import "../../../public/styles/variables.scss";
 @import "../../../public/styles/mixins.scss";
-
 @each $f in $series {
     .f-#{$f} {
         font-size: #{$f}px;
     }
 }
-
 @each $color in $colors {
     .color-#{$color} {
         color: #{'#'}#{$color};
     }
 }
-
 @each $border in $colors {
     .border-#{$border} {
         border: 3px solid #{'#'}#{$border};
@@ -25,9 +22,7 @@ header {
         padding-top: 10px;
 
         .top-logo {
-            img {
-
-            }
+            img {}
         }
 
         .search-area {
@@ -44,7 +39,7 @@ header {
             margin-bottom: 15px;
 
             .main-menu {
-                padding: 0px !important;
+                padding: 0 !important;
 
                 .menu-icon {
                     display: none;
@@ -73,12 +68,12 @@ header {
                     .menu-border {
                         display: block;
                         width: 90%;
-                        margin: 0 5% 0 5%;
+                        margin: 0 5%;
                     }
                 }
 
-                .menu-link:hover,
-                .menu-link.active {
+                .menu-link.active,
+                .menu-link:hover {
                     background: #ffffff !important;
 
                     .menu-item {

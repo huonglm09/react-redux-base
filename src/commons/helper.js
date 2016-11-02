@@ -1,5 +1,4 @@
 class Helper {
-
     convertObjectFormData(obj) {
         var formData = new FormData();
 

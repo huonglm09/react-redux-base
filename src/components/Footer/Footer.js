@@ -1,7 +1,10 @@
+// both
 import React, { Component } from 'react'
+// get
 import { Grid, Row, Col } from 'react-bootstrap'
+// normal
 import Social from '../Social/Social'
-
+// css
 import './footer.scss'
 
 class Footer extends Component {

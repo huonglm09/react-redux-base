@@ -1,18 +1,20 @@
+// both
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
-import authReducer from './auth'
-import categoryReducer from './category'
-import articleReducer from './article'
-import slideshowReducer from './slideshow'
-import searchReducer from './search'
+// normal
+import reducerAuth from './auth'
+import reducerCategory from './category'
+import reducerArticle from './article'
+import reducerSlideshow from './slideshow'
+import reducerSearch from './search'
 
-const rootReducer = combineReducers({
-    authReducer,
-    categoryReducer,
-    articleReducer,
-    slideshowReducer,
-    searchReducer,
+const reducerRoot = combineReducers({
+    reducerAuth,
+    reducerCategory,
+    reducerArticle,
+    reducerSlideshow,
+    reducerSearch,
     routing
 })
 
-export default rootReducer
+export default reducerRoot

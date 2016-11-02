@@ -1,9 +1,12 @@
+// both
 import React, { Component } from 'react'
+// get
 import {Link} from 'react-router'
-import AutoComplete from 'material-ui/AutoComplete'
 import { Row, Col, Image } from 'react-bootstrap'
+// normal
 import ScrollArea from 'react-scrollbar'
-
+import AutoComplete from 'material-ui/AutoComplete'
+// css
 import './search.scss'
 
 class Search extends Component {

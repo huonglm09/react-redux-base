@@ -1,6 +1,6 @@
 import * as types from '../types'
 
-const searchReducer = (state = null, action) => {
+const reducerSearch = (state = null, action) => {
     switch (action.type) {
         case types.ARTICLE_SEARCH_REQUEST:
             return action.data
@@ -13,4 +13,4 @@ const searchReducer = (state = null, action) => {
     }
 }
 
-export default searchReducer
+export default reducerSearch

@@ -1,8 +1,6 @@
 import * as types from '../types'
 
-const authState = {username: '', password: ''}
-
-const authReducer = (state = authState, action) => {
+const reducerAuth = (state = null, action) => {
     switch (action.type) {
         case types.AUTH_LOGIN_REQUEST:
             return action.data
@@ -15,4 +13,4 @@ const authReducer = (state = authState, action) => {
     }
 }
 
-export default authReducer
+export default reducerAuth

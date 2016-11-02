@@ -1,10 +1,14 @@
-import React from 'react'
+// get
 import { Route, IndexRoute } from 'react-router'
+// normal
+import React from 'react'
 import App from './containers/App'
-import HomePage from './containers/HomePage'
-import CategoryPage from './containers/CategoryPage'
+import PageHome from './containers/PageHome'
+import PageCategory from './containers/PageCategory'
 
-export default <Route path="/" component={App}>
-        <IndexRoute component={HomePage} />
-        <Route path="/chuyen-muc/:category" component={CategoryPage} />
-</Route>
+const route =   <Route path="/" component={App}>
+                    <IndexRoute component={PageHome} />
+                    <Route path="/chuyen-muc/:category" component={PageCategory} />
+                </Route>
+
+export default route

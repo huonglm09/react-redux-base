@@ -10,16 +10,15 @@
         width: 255px;
 
         .row {
-            margin: 0px;
-            padding: 10px 0px;
+            margin: 0;
+            padding: 10px 0;
 
             .col-md-3 {
-                padding: 0px;
-                padding-left: 10px;
+                padding: 0 0 0 10px;
             }
 
             .col-md-9 {
-                padding: 0px;
+                padding: 0;
                 font-size: 12px;
                 padding-left: 10px;
                 padding-right: 10px;

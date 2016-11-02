@@ -1,6 +1,6 @@
 import * as types from '../types'
 
-const categoryReducer = (state = null, action) => {
+const reducerCategory = (state = null, action) => {
     switch (action.type) {
         case types.CATEGORY_LIST_REQUEST:
             return action.data
@@ -13,4 +13,4 @@ const categoryReducer = (state = null, action) => {
     }
 }
 
-export default categoryReducer
+export default reducerCategory

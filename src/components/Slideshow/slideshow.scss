@@ -1,6 +1,6 @@
 .slideshow {
-    padding: 0px 25px;
-    margin: 15px 0px 40px 0px;
+    padding: 0 25px;
+    margin: 15px 0 40px;
 
     .slideshow-main {
         background: #ffffff;
@@ -41,6 +41,7 @@
             font: normal normal normal 32px/1 FontAwesome;
             color: #000000;
         }
+
         .slick-next::before {
             content: "\f054";
             font: normal normal normal 32px/1 FontAwesome;
@@ -52,7 +53,7 @@
 
             .slideshow-star {
                 position: absolute;
-                top: 0px;
+                top: 0;
                 right: 15px;
 
                 button {

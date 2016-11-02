@@ -1,9 +1,12 @@
+// both
 import React, { Component, PropTypes } from 'react'
+// get
+import { Grid } from 'react-bootstrap'
+// normal
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import { Grid } from 'react-bootstrap'
-
+// css
 import './layout.scss'
 import './responsive.scss'
 

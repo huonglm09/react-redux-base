@@ -1,7 +1,9 @@
+// both
 import React, { Component } from 'react'
+// normal
 import FontIcon from 'material-ui/FontIcon'
 import IconButton from 'material-ui/IconButton'
-
+// css
 import './social.scss'
 
 class Social extends Component {

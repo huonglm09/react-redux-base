@@ -1,6 +1,6 @@
 import * as types from '../types'
 
-const slideshowReducer = (state = null, action) => {
+const reducerSlideshow = (state = null, action) => {
     switch (action.type) {
         case types.ARTICLE_SLIDESHOW_REQUEST:
             return action.data
@@ -13,4 +13,4 @@ const slideshowReducer = (state = null, action) => {
     }
 }
 
-export default slideshowReducer
+export default reducerSlideshow

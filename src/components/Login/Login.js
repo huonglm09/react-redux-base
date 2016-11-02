@@ -1,4 +1,6 @@
+// both
 import React, { Component, PropTypes } from 'react'
+// css
 import './login.scss'
 
 class Login extends Component {

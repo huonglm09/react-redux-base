@@ -1,11 +1,14 @@
+// both
 import React, { Component } from 'react'
+// get
 import { Row, Col, Image } from 'react-bootstrap'
 import {Link} from 'react-router'
+// normal
 import Slider from 'react-slick'
 import IconButton from 'material-ui/IconButton'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
-import ActionGrade from 'material-ui/svg-icons/action/grade';
-
+import ActionGrade from 'material-ui/svg-icons/action/grade'
+// css
 import './slideshow.scss'
 
 class Slideshow extends Component {

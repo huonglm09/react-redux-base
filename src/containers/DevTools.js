@@ -1,5 +1,7 @@
-import React from 'react'
+// get
 import {createDevTools} from 'redux-devtools'
+// normal
+import React from 'react'
 import LogMonitor from 'redux-devtools-log-monitor'
 import DockMonitor from 'redux-devtools-dock-monitor'
 

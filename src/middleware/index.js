@@ -5,7 +5,7 @@ export function checkStatus(response) {
         error.response = response;
         throw error;
     }
-    
+
     return response;
 }
 

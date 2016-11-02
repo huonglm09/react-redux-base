@@ -1,12 +1,15 @@
+// both
 import React, { Component } from 'react'
+// get
+import {Link} from 'react-router'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
+// normal
+import Search from '../Search/Search'
 import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu'
 import IconButton from 'material-ui/IconButton'
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
-import Search from '../Search/Search'
-import {Link} from 'react-router'
-
+// css
 import './header.scss'
 
 class Header extends Component {

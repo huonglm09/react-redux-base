@@ -1,11 +1,14 @@
+// both
 import React, { Component } from 'react'
-import { Col, Image } from 'react-bootstrap'
+// get
 import {Link} from 'react-router'
+import { Col, Image } from 'react-bootstrap'
+// normal
 import Masonry from 'react-masonry-component'
 import IconButton from 'material-ui/IconButton'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
-import ActionGrade from 'material-ui/svg-icons/action/grade';
-
+import ActionGrade from 'material-ui/svg-icons/action/grade'
+// css
 import './article.scss'
 
 class Article extends Component {

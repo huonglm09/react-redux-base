@@ -1,8 +1,11 @@
+// both
 import React, {PropTypes} from 'react'
+// get
 import {Provider} from 'react-redux'
+import {Router} from 'react-router'
+// normal
 import routes from '../routes'
 import DevTools from './DevTools'
-import {Router} from 'react-router'
 
 const Root = ({store, history}) => (
     <Provider store={store}>
