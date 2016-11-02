@@ -38,7 +38,7 @@ class Search extends Component {
                 let color = colors[Math.floor(key)]
 
                 return (
-                    <Link key={item.id} to={`/chuyen-muc/`}>
+                    <Link key={item.id} to={`/`}>
                         <Row>
                             <Col md={3} xs={4}>
                                 <Image src={item.image} responsive />
