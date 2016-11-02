@@ -38,9 +38,9 @@ class CategoryPage extends Component {
     }
 
     render() {
-        const {categories, articles, slideshows} = this.props
+        const {categories, articles, slideshows, searchs} = this.props
         return (
-            <Layout categories={categories} activeCategory={this.props.params.category} onSearch={this.dispatchSearch.bind(this)}>
+            <Layout categories={categories} activeCategory={this.props.params.category} searchs={searchs} onSearch={this.dispatchSearch.bind(this)}>
                 <Slideshow slideshows={slideshows} activeCategory={this.props.params.category}/>
                 <Article articles={articles} activeCategory={this.props.params.category}/>
             </Layout>
