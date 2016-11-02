@@ -1,7 +1,7 @@
 {
-  "name": "reactjs",
+  "name": "react-redux-base",
   "version": "0.0.1",
-  "description": "The first application about react",
+  "description": "Application about react and redux",
   "main": "index.js",
   "private": true,
   "author": "huonglm",
