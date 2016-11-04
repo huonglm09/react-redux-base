@@ -2,8 +2,7 @@
   "name": "react-redux-base",
   "version": "0.0.1",
   "description": "Application about react and redux",
-  "main": "index.js",
-  "private": true,
+  "main": "index.js",  
   "author": "huonglm",
   "license": "ISC",
   "devDependencies": {
