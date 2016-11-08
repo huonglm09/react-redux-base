@@ -5,31 +5,201 @@
 2 info using npm@3.8.9
 3 info using node@v6.2.0
 4 verbose publish [ '.' ]
-5 verbose stack Error: Failed to parse json
-5 verbose stack Trailing comma in array at 131:3
-5 verbose stack   ],
-5 verbose stack   ^
-5 verbose stack     at parseError (C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:390:11)
-5 verbose stack     at parseJson (C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:79:23)
-5 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:48:5
-5 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:78:16
-5 verbose stack     at tryToString (fs.js:449:3)
-5 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:436:12)
-6 verbose cwd D:\Programs\htdocs\react-redux-base
-7 error Windows_NT 10.0.14393
-8 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
-9 error node v6.2.0
-10 error npm  v3.8.9
-11 error file D:\Programs\htdocs\react-redux-base\package.json
-12 error code EJSONPARSE
-13 error Failed to parse json
-13 error Trailing comma in array at 131:3
-13 error   ],
-13 error   ^
-14 error File: D:\Programs\htdocs\react-redux-base\package.json
-15 error Failed to parse package.json data.
-15 error package.json must be actual JSON, not just JavaScript.
-15 error
-15 error This is not a bug in npm.
-15 error Tell the package author to fix their package.json file. JSON.parse
-16 verbose exit [ 1, true ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'D:\\Programs\\htdocs\\react-redux-base',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\huonglm\AppData\Roaming\npm-cache\react-redux-base\0.0.1\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\huonglm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle react-redux-base@0.0.1~prepublish: react-redux-base@0.0.1
+11 silly lifecycle react-redux-base@0.0.1~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ 'C:\\Users\\huonglm\\AppData\\Roaming\\npm-cache\\react-redux-base\\0.0.1\\package.tgz',
+12 verbose tar pack   'D:\\Programs\\htdocs\\react-redux-base' ]
+13 verbose tarball C:\Users\huonglm\AppData\Roaming\npm-cache\react-redux-base\0.0.1\package.tgz
+14 verbose folder D:\Programs\htdocs\react-redux-base
+15 verbose addLocalTarball adding from inside cache C:\Users\huonglm\AppData\Roaming\npm-cache\react-redux-base\0.0.1\package.tgz
+16 verbose correctMkdir C:\Users\huonglm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+17 silly cache afterAdd react-redux-base@0.0.1
+18 verbose afterAdd C:\Users\huonglm\AppData\Roaming\npm-cache\react-redux-base\0.0.1\package\package.json not in flight; writing
+19 verbose correctMkdir C:\Users\huonglm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose afterAdd C:\Users\huonglm\AppData\Roaming\npm-cache\react-redux-base\0.0.1\package\package.json written
+21 silly publish { name: 'react-redux-base',
+21 silly publish   version: '0.0.1',
+21 silly publish   description: 'Application about react and redux',
+21 silly publish   main: 'index.js',
+21 silly publish   author: { name: 'huonglm' },
+21 silly publish   license: 'ISC',
+21 silly publish   devDependencies:
+21 silly publish    { autoprefixer: '6.4.1',
+21 silly publish      'babel-core': '6.14.0',
+21 silly publish      'babel-eslint': '6.1.2',
+21 silly publish      'babel-jest': '15.0.0',
+21 silly publish      'babel-loader': '6.2.5',
+21 silly publish      'babel-preset-react-app': '^0.2.1',
+21 silly publish      'case-sensitive-paths-webpack-plugin': '1.1.4',
+21 silly publish      chalk: '1.1.3',
+21 silly publish      'connect-history-api-fallback': '1.3.0',
+21 silly publish      'cross-spawn': '4.0.0',
+21 silly publish      'css-loader': '0.24.0',
+21 silly publish      'detect-port': '1.0.0',
+21 silly publish      dotenv: '2.0.0',
+21 silly publish      eslint: '3.5.0',
+21 silly publish      'eslint-config-react-app': '^0.2.1',
+21 silly publish      'eslint-loader': '1.5.0',
+21 silly publish      'eslint-plugin-flowtype': '2.18.1',
+21 silly publish      'eslint-plugin-import': '1.12.0',
+21 silly publish      'eslint-plugin-jsx-a11y': '2.2.2',
+21 silly publish      'eslint-plugin-react': '6.3.0',
+21 silly publish      'extract-text-webpack-plugin': '1.0.1',
+21 silly publish      'file-loader': '0.9.0',
+21 silly publish      filesize: '3.3.0',
+21 silly publish      'find-cache-dir': '0.1.1',
+21 silly publish      'fs-extra': '0.30.0',
+21 silly publish      'gzip-size': '3.0.0',
+21 silly publish      'html-webpack-plugin': '2.22.0',
+21 silly publish      'http-proxy-middleware': '0.17.1',
+21 silly publish      'imports-loader': '^0.6.5',
+21 silly publish      jest: '15.1.1',
+21 silly publish      'json-loader': '0.5.4',
+21 silly publish      'material-ui': '^0.16.1',
+21 silly publish      'node-sass': '^3.10.1',
+21 silly publish      'object-assign': '4.1.0',
+21 silly publish      'path-exists': '2.1.0',
+21 silly publish      'postcss-loader': '0.13.0',
+21 silly publish      promise: '7.1.1',
+21 silly publish      'react-dev-utils': '^0.2.1',
+21 silly publish      'react-masonry-component': '^4.2.2',
+21 silly publish      'react-scrollbar': '^0.4.2',
+21 silly publish      'react-slick': '^0.14.5',
+21 silly publish      'recursive-readdir': '2.1.0',
+21 silly publish      'redux-devtools': '^3.3.1',
+21 silly publish      'redux-devtools-dock-monitor': '^1.1.1',
+21 silly publish      'redux-devtools-log-monitor': '^1.0.11',
+21 silly publish      'redux-logger': '^2.6.1',
+21 silly publish      rimraf: '2.5.4',
+21 silly publish      'sass-loader': '^4.0.2',
+21 silly publish      'strip-ansi': '3.0.1',
+21 silly publish      'style-loader': '0.13.1',
+21 silly publish      'url-loader': '0.5.7',
+21 silly publish      webpack: '^1.13.2',
+21 silly publish      'webpack-dev-server': '1.16.1',
+21 silly publish      'whatwg-fetch': '1.0.0' },
+21 silly publish   dependencies:
+21 silly publish    { 'extract-text-webpack-plugin': '^1.0.1',
+21 silly publish      humps: '^1.1.0',
+21 silly publish      lodash: '^4.16.1',
+21 silly publish      normalizr: '^2.2.1',
+21 silly publish      react: '^15.3.0',
+21 silly publish      'react-bootstrap': '^0.30.5',
+21 silly publish      'react-dom': '^15.3.0',
+21 silly publish      'react-fontawesome': '^1.2.0',
+21 silly publish      'react-redux': '^4.4.5',
+21 silly publish      'react-router': '^2.6.1',
+21 silly publish      'react-router-redux': '^4.0.5',
+21 silly publish      'react-tap-event-plugin': '^1.0.0',
+21 silly publish      redux: '^3.5.2',
+21 silly publish      'redux-thunk': '^2.1.0',
+21 silly publish      webpack: '^1.12.8' },
+21 silly publish   scripts:
+21 silly publish    { start: 'node scripts/start.js',
+21 silly publish      build: 'node scripts/build.js' },
+21 silly publish   jest:
+21 silly publish    { moduleFileExtensions: [ 'jsx', 'js', 'json' ],
+21 silly publish      moduleNameMapper:
+21 silly publish       { '^.+\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>\\config\\jest\\FileStub.js',
+21 silly publish         '^.+\.css$': '<rootDir>\\config\\jest\\CSSStub.js' },
+21 silly publish      setupFiles: [ '<rootDir>\\config\\polyfills.js' ],
+21 silly publish      testPathIgnorePatterns: [ '<rootDir>/(build|docs|node_modules)/' ],
+21 silly publish      testEnvironment: 'node',
+21 silly publish      testRegex: '(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$' },
+21 silly publish   babel: { presets: [ 'react-app' ] },
+21 silly publish   eslintConfig: { extends: 'react-app' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/huonglm09/react-redux-base.git' },
+21 silly publish   keywords:
+21 silly publish    [ 'react',
+21 silly publish      'redux',
+21 silly publish      'props',
+21 silly publish      'state',
+21 silly publish      'model',
+21 silly publish      'base',
+21 silly publish      'basic',
+21 silly publish      'advance',
+21 silly publish      'react model',
+21 silly publish      'redux model',
+21 silly publish      'react redux model',
+21 silly publish      'react redux base',
+21 silly publish      'react redux basic',
+21 silly publish      'react redux advance' ],
+21 silly publish   bugs: { url: 'https://github.com/huonglm09/react-redux-base/issues' },
+21 silly publish   homepage: 'https://github.com/huonglm09/react-redux-base/blob/master/README.md',
+21 silly publish   readme: '# React and Redux Base\r\n\r\nThis project built with News application\r\n\r\n## Available Scripts\r\n\r\nIn the project directory, you can run:\r\n\r\n### `npm start`\r\n\r\nRuns the app in the development mode.<br>\r\nOpen [http://localhost:3000](http://localhost:3000) to view it in the browser.\r\n\r\nThe page will reload if you make edits.<br>\r\nYou will also see any lint errors in the console.\r\n\r\n### `npm run build`\r\n\r\nBuilds the app for production to the `build` folder.<br>\r\nIt correctly bundles React in production mode and optimizes the build for the best performance.\r\n\r\nThe build is minified and the filenames include the hashes.<br>\r\nYour app is ready to be deployed!\r\n\r\n### `npm run eject`\r\n\r\n**Note: this is a one-way operation. Once you `eject`, you can’t go back!**\r\n\r\nIf you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.\r\n\r\nInstead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.\r\n\r\nYou don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.\r\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'c95113cf2698dbc125d6910389aa917098b66a3c',
+21 silly publish   _id: 'react-redux-base@0.0.1',
+21 silly publish   _shasum: 'd9ca6bb80f5b0d9575c905ef5780603e7f694f60',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name react-redux-base
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'react-redux-base',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'react-redux-base',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/react-redux-base
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading C:\Users\huonglm\AppData\Roaming\npm-cache\react-redux-base\0.0.1\package.tgz
+30 verbose request uri https://registry.npmjs.org/react-redux-base
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 2:32:59 PM
+33 verbose request using bearer token for auth
+34 verbose request id 300e642e8c27e534
+35 http request PUT https://registry.npmjs.org/react-redux-base
+36 http 403 https://registry.npmjs.org/react-redux-base
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Tue, 08 Nov 2016 07:34:46 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-lax8649-LAX',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1478590455.192146,VS0,VE31045',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating C:\Users\huonglm\AppData\Roaming\npm-cache\registry.npmjs.org\react-redux-base on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.0.1." : react-redux-base
+40 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+40 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+40 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:200:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1067:10)
+40 verbose stack     at emitOne (events.js:101:20)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:988:12)
+41 verbose statusCode 403
+42 verbose pkgid react-redux-base
+43 verbose cwd D:\Programs\htdocs\react-redux-base
+44 error Windows_NT 10.0.14393
+45 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+46 error node v6.2.0
+47 error npm  v3.8.9
+48 error code E403
+49 error "You cannot publish over the previously published version 0.0.1." : react-redux-base
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
