@@ -2,7 +2,7 @@
   "name": "react-redux-base",
   "version": "0.0.1",
   "description": "Application about react and redux",
-  "main": "index.js",  
+  "main": "index.js",
   "author": "huonglm",
   "license": "ISC",
   "devDependencies": {
@@ -108,5 +108,29 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huonglm09/react-redux-base.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "props",
+    "state",
+    "model",
+    "base",
+    "basic",
+    "advance",
+    "react model",
+    "redux model",
+    "react redux model",
+    "react redux base",
+    "react redux basic",
+    "react redux advance",
+  ],
+  "bugs": {
+      "url": "https://github.com/huonglm09/react-redux-base/issues"
+  },
+  "homepage": "https://github.com/huonglm09/react-redux-base/blob/master/README.md"
 }
