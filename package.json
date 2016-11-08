@@ -1,6 +1,6 @@
 {
   "name": "react-redux-base",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "Application about react and redux",
   "main": "index.js",
   "author": "huonglm",
@@ -118,18 +118,10 @@
     "redux",
     "props",
     "state",
-    "model",
-    "base",
-    "basic",
-    "advance",
-    "react model",
-    "redux model",
     "react and redux",
-    "react and redux base",
     "react redux model",
-    "react redux base",
-    "react redux basic",
-    "react redux advance"
+    "react redux based",
+    "react and redux based",
   ],
   "bugs": {
       "url": "https://github.com/huonglm09/react-redux-base/issues"
