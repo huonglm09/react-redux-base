@@ -1,6 +1,6 @@
 {
   "name": "react-redux-base",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Application about react and redux",
   "main": "index.js",
   "author": "huonglm",
